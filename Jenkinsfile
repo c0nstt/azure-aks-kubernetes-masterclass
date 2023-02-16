@@ -5,7 +5,7 @@ pipeline {
       parallel {
         stage('Stage 1') {
           steps {
-            sh 'echo "Stage 1 (From GitHub)"'
+            sh 'echo "Stage 1 (From VisualStudioCode)"'
           }
         }
 
