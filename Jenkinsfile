@@ -25,8 +25,14 @@ pipeline {
     }
 
     stage('Stage 3') {
+      environment {
+        VAR = '123'
+      }
       steps {
-        sh 'echo "Stage 3 (edited)"'
+        sh '''echo "Stage 3 (edited) $VAR"
+
+
+'''
       }
     }
 
