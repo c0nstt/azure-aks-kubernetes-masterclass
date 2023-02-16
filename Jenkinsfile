@@ -27,9 +27,10 @@ pipeline {
     stage('Stage 3') {
       environment {
         VAR = '123'
+        username = ''
       }
       steps {
-        sh '''echo "Stage 3 (edited) $VAR"
+        sh '''echo "Stage 3 (edited) $VAR --$username"
 
 
 '''
