@@ -26,7 +26,7 @@ pipeline {
 
     stage('Stage 3') {
       steps {
-        sh 'echo "Stage 3"'
+        sh 'echo "Stage 3 (edited)"'
       }
     }
 
