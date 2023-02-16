@@ -1,9 +1,15 @@
 pipeline {
   agent any
   stages {
-    stage('First stage') {
+    stage('Stage 1') {
       steps {
-        sh 'echo "Shell script"'
+        sh 'echo "Stage 1"'
+      }
+    }
+
+    stage('Stage 2') {
+      steps {
+        sh 'echo "Stage 2"'
       }
     }
 
