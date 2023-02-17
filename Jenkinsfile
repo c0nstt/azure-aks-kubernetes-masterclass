@@ -3,6 +3,9 @@ pipeline {
   environment {
     GLOBAL_VAR = 'Global'
     SECRET_VAR = credentials('id')
+    withCredentials([usernameColonPassword(credentialsId: 'id', variable: 'id')]) {
+    // some block
+    }
   }
   stages {
     stage('Stage 1') {
