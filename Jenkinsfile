@@ -24,7 +24,9 @@ pipeline {
 
 '''
         sh 'uname -a'
-        sh 'env | sort'
+        sh 'ls -la'
+        sh 'touch 123.txt'
+        sh 'ls -la'
       }
     }
 
