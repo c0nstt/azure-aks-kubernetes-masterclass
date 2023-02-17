@@ -23,7 +23,7 @@ pipeline {
         sh '''pwd
 
 '''
-        sh 'ls -la /home'
+        sh 'df'
         sh 'ls -la'
         sh 'touch 123.txt'
         sh 'ls -la'
