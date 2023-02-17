@@ -15,6 +15,7 @@ pipeline {
         stage('Stage 1-2') {
           steps {
             sh 'echo "Stage 1-2-3"'
+            sh 'env | sort'
           }
         }
 
