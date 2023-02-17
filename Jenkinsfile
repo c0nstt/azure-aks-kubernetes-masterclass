@@ -1,11 +1,16 @@
 pipeline {
   agent any
+  environment {
+    GLOBAL_VAR = 'Global'
+    //SECRET_VAR = credentials('id')
+  }
   stages {
     stage('Stage 1') {
       parallel {
         stage('Stage 1') {
           steps {
             sh 'echo "Stage 1 (From VisualStudioCode)"'
+            sh 'echo $GLOBAL_VAR'
           }
         }
 
@@ -21,8 +26,6 @@ pipeline {
     stage('Stage 2') {
       steps {
         sh '''pwd
-
-'''
         sh 'df'
         sh 'ls -la'
         sh 'touch 123.txt'
@@ -36,16 +39,9 @@ pipeline {
       }
       steps {
         sh '''echo "Stage 3 (edited) $VAR --$test"
-
-
-'''
         sh 'ls -la'
       }
     }
-
   }
-  environment {
-    GLOBAL_VAR = 'Global'
-    //SECRET_VAR = credentials('id')
-  }
+  
 }
