@@ -38,7 +38,7 @@ pipeline {
         VAR = '123'
       }
       steps {
-        sh 'echo "Stage 3 (edited) $VAR --$test'
+        sh 'echo "Stage 3 (edited) $VAR --$test"'
         sh 'ls -la'
       }
     }
