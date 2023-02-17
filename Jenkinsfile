@@ -46,6 +46,6 @@ pipeline {
   }
   environment {
     GLOBAL_VAR = 'Global'
-    SECRET_VAR = credentials('id')
+    //SECRET_VAR = credentials('id')
   }
 }
