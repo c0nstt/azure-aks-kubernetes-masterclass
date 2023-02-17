@@ -39,6 +39,7 @@ pipeline {
 
 
 '''
+        sh 'ls -la'
       }
     }
 
