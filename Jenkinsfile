@@ -5,10 +5,10 @@ pipeline {
       parallel {
         stage('Stage 1') {
           steps {
-            sh 'echo "Stage 1 (From VisualStudioCode)"'
+            sh 'echo Stage 1 (From VisualStudioCode)'
             sh 'echo $GLOBAL_VAR'
-            sh 'echo "$SECRET_VAR"'
-            sh 'echo "$SECRET_VAR_PSW"'
+            sh 'echo $SECRET_VAR'
+            sh 'echo $SECRET_VAR_PSW'
           }
         }
 
