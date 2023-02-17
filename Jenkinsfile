@@ -1,19 +1,15 @@
 pipeline {
   agent any
-  environment {
-    GLOBAL_VAR = 'Global'
-    SECRET_VAR = credentials('id')
-  }
   stages {
     stage('Stage 1') {
       parallel {
         stage('Stage 1') {
-            steps {
-                withCredentials([usernameColonPassword(credentialsId: 'id', variable: 'id')]) {
-                sh 'echo "$SECRET_VAR"'
-                sh 'echo "$SECRET_VAR_PSW"'
-                // or $SECRET_VAR_PSW
+          steps {
+            withCredentials(bindings: [usernameColonPassword(credentialsId: 'id', variable: 'id')]) {
+              sh 'echo "$SECRET_VAR"'
+              sh 'echo "$SECRET_VAR_PSW"'
             }
+
             sh 'echo "Stage 1 (From VisualStudioCode)"'
             sh 'echo $GLOBAL_VAR'
             sh 'echo "$SECRET_VAR"'
@@ -48,6 +44,10 @@ pipeline {
         sh 'ls -la'
       }
     }
-  }
 
+  }
+  environment {
+    GLOBAL_VAR = 'Global'
+    SECRET_VAR = credentials('id')
+  }
 }
