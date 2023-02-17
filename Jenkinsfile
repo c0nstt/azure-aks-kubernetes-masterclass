@@ -20,6 +20,10 @@ pipeline {
 
     stage('Stage 2') {
       steps {
+        sh '''pwd
+
+'''
+        sh 'uname -a'
         sh 'env | sort'
       }
     }
