@@ -25,7 +25,7 @@ pipeline {
 
     stage('Stage 2') {
       steps {
-        sh '''pwd
+        sh 'pwd'
         sh 'df'
         sh 'ls -la'
         sh 'touch 123.txt'
@@ -43,5 +43,5 @@ pipeline {
       }
     }
   }
-  
+
 }
