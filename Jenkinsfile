@@ -10,13 +10,11 @@ pipeline {
         stage('Stage 1') {
             steps {
                 withCredentials([usernameColonPassword(credentialsId: 'id', variable: 'id')]) {
-                sh 'echo "$SECRET_VAR"'
-                sh 'echo "$SECRET_VAR_PSW"'
+                sh 'echo "$SECRET_VAR"
                 // or $SECRET_VAR_PSW
             }
             sh 'echo "Stage 1 (From VisualStudioCode)"'
             sh 'echo $GLOBAL_VAR'
-            sh 'echo "$SECRET_VAR"'
           }
         }
 
