@@ -5,11 +5,6 @@ pipeline {
       parallel {
         stage('Stage 1') {
           steps {
-            //withCredentials(bindings: [usernameColonPassword(credentialsId: 'id', variable: 'id')]) {
-            //  sh 'echo "$SECRET_VAR"'
-            //  sh 'echo "$SECRET_VAR_PSW"'
-            //}
-
             sh 'echo "Stage 1 (From VisualStudioCode)"'
             sh 'echo $GLOBAL_VAR'
             sh 'echo "$SECRET_VAR"'
@@ -43,6 +38,8 @@ pipeline {
       steps {
         sh 'echo "Stage 3 (edited) $VAR --$test"'
         sh 'ls -la'
+        sh 'echo "$SECRET_VAR"'
+        sh 'echo "$SECRET_VAR_PSW"'
       }
     }
 
