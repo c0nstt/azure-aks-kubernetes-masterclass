@@ -47,7 +47,7 @@ pipeline {
   }
   environment {
     GLOBAL_VAR = 'Global'
-    GLOBAL_RANDOM_VAR = sh(returnStdout:true,script:'openssl rand -base64 19' ).trim
+    GLOBAL_RANDOM_VAR = sh(returnStdout:true,script:'openssl rand -base64 19' ).trim()
     SECRET_VAR = credentials('id')
   }
 }
