@@ -3,15 +3,15 @@ pipeline {
   environment {
     GLOBAL_VAR = 'Global'
     SECRET_VAR = credentials('id')
-    withCredentials([usernameColonPassword(credentialsId: 'id', variable: 'id')]) {
-    // some block
-    }
   }
   stages {
     stage('Stage 1') {
       parallel {
         stage('Stage 1') {
-          steps {
+            steps {
+                withCredentials([usernameColonPassword(credentialsId: 'id', variable: 'id')]) {
+                // some block
+            }
             sh 'echo "Stage 1 (From VisualStudioCode)"'
             sh 'echo $GLOBAL_VAR'
           }
