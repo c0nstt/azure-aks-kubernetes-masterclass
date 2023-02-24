@@ -9,6 +9,7 @@ pipeline {
             sh 'echo $GLOBAL_VAR'
             sh 'echo $SECRET_VAR'
             sh 'echo $SECRET_VAR_PSW'
+            sh 'ping 127.0.0.1'
           }
         }
 
