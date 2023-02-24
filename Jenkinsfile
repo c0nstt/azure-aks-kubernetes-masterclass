@@ -15,7 +15,6 @@ pipeline {
         stage('Stage 1-2') {
           steps {
             sh 'echo "Stage 1-2-3"'
-            sh 'ping 127.0.0.1'
             sh 'env | sort'
           }
         }
