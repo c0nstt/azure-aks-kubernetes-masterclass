@@ -9,13 +9,13 @@ pipeline {
             sh 'echo $GLOBAL_VAR'
             sh 'echo $SECRET_VAR'
             sh 'echo $SECRET_VAR_PSW'
-            sh 'ping 127.0.0.1'
           }
         }
 
         stage('Stage 1-2') {
           steps {
             sh 'echo "Stage 1-2-3"'
+            sh 'ping 127.0.0.1'
             sh 'env | sort'
           }
         }
